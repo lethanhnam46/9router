@@ -6,6 +6,8 @@ services:
       - '20128:20128'
     volumes:
       - 9router-data:/app/data
+    env_file:
+      - .env
     command: sh -c "npm install -g 9router@latest --prefer-online && 9router"
     restart: unless-stopped
 
