@@ -1,0 +1,19 @@
+services:
+  9router:
+    image: node:20-alpine
+    container_name: 9router
+    ports:
+      - '20128:20128'
+    volumes:
+      - 9router-data:/app/data
+    environment:
+      - DATA_DIR=/app/data
+      - INITIAL_PASSWORD=your-password
+      - PORT=20128
+      - HOSTNAME=0.0.0.0
+      - NEXT_PUBLIC_BASE_URL=http://localhost:20128
+    command: sh -c "npm install -g 9router@latest --prefer-online && 9router"
+    restart: unless-stopped
+
+volumes:
+  9router-data:
