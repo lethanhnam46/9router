@@ -8,7 +8,7 @@ services:
       - 9router-data:/app/data
     environment:
       - DATA_DIR=/app/data
-      - INITIAL_PASSWORD=your-password
+      - INITIAL_PASSWORD=Keolac@195198
       - PORT=20128
       - HOSTNAME=0.0.0.0
       - NEXT_PUBLIC_BASE_URL=http://localhost:20128
