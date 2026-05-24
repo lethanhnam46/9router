@@ -8,7 +8,13 @@ services:
       - 9router-data:/app/data
     env_file:
       - .env
+    networks:
+      - cloudflare
     restart: unless-stopped
 
 volumes:
   9router-data:
+
+networks:
+  cloudflare:
+    external: true
